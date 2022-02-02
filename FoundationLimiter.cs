@@ -1,4 +1,4 @@
-﻿/*
+/*
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⣄⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣴⣿⡄⠀⠀⠀⠀⠀⢀⡀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠰⣶⣾⣿⣿⣿⣿⣿⡇⠀⢠⣷⣤⣶⣿⡇
@@ -15,10 +15,11 @@ https://github.com/JerimiahOfficial/
 */
 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Oxide.Plugins {
-    [Info("FoundationLimiter", "Jerimiah", "0.0.1")]
+    [Info("FoundationLimiter", "Jerimiah", "0.0.2")]
     [Description("A plugin to limit players to a set amout of foundations.")]
 
     class FoundationLimiter : CovalencePlugin {
@@ -54,7 +55,7 @@ namespace Oxide.Plugins {
         // Check if given player is over the foundation limit.
         private bool PlayerOverLimit(BasePlayer player) {
             var Foundations = new List<BuildingBlock>();
-            var blocks = UnityEngine.Object.FindObjectsOfType<BuildingBlock>();
+            var blocks = BaseNetworkable.serverEntities.OfType<BuildingBlock>();
 
             foreach (var block in blocks) {
                 if (block.name.Contains("foundation"))
