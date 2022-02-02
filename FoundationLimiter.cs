@@ -54,19 +54,7 @@ namespace Oxide.Plugins {
 
         // Check if given player is over the foundation limit.
         private bool PlayerOverLimit(BasePlayer player) {
-            var Foundations = new List<BuildingBlock>();
-            var blocks = BaseNetworkable.serverEntities.OfType<BuildingBlock>();
-
-            foreach (var block in blocks) {
-                if (block.name.Contains("foundation"))
-                    if (block.OwnerID == player.userID)
-                        Foundations.Add(block);
-            }
-
-            if (Foundations.Count > 100)
-                return true;
-            else
-                return false;
+            return BaseNetworkable.serverEntities.OfType<BuildingBlock>().Count(x => x.name.Contains("foundation") && x.OwnerID == player.userID) > 100;
         }
     }
 }
