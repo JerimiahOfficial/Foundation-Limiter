@@ -14,9 +14,7 @@ Created by Jerimiah
 https://github.com/JerimiahOfficial/
 */
 
-using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 namespace Oxide.Plugins {
     [Info("FoundationLimiter", "Jerimiah", "0.0.2")]
@@ -46,8 +44,8 @@ namespace Oxide.Plugins {
         // stop building before it happens
         private object CheckBuild(BasePlayer player, Construction entity) {
             if (entity.fullName.Contains("foundation") && PlayerOverLimit(player)) {
-               player.ChatMessage("You've reached the maxium foundations.");
-               return false;
+                player.ChatMessage("You've reached the maxium foundations.");
+                return false;
             }
             return null;
         }
