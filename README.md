@@ -4,8 +4,8 @@ comes with 2 different versions:
 - PlayerFoundationLimiter.cs
 
 ### PlayerFoundationLimiter.cs
-limits the foundations per player
+Limits each player to a set amount of foundations they can place.
 
 
 ### BaseFoundationLimiter.cs
-limits the foundations per base
+Limits the foundations per base by checking how many foundaitons connected to a base.
