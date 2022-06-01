@@ -22,7 +22,7 @@ namespace Oxide.Plugins {
 
     class FoundationLimiter : CovalencePlugin {
         private bool? CanBuild(Planner planner, Construction prefab, Construction.Target target) {
-            if (prefab.fullName.Contains("foundation") && PlayerOverLimit(player)) {
+            if (prefab.fullName.Contains("foundation") && PlayerOverLimit(planner.GetOwnerPlayer())) {
                 planner.GetOwnerPlayer().ChatMessage("You've reached the maxium foundations.");
                 return false;
             }
