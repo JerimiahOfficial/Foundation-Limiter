@@ -18,7 +18,7 @@ using System.Linq;
 
 namespace Oxide.Plugins {
     [Info("BaseFoundationLimiter", "Jerimiah", "0.0.3")]
-    [Description("A plugin to limit players to a set amount of foundations.")]
+    [Description("Limits the amount of foundations a base can have.")]
 
     class BaseFoundationLimiter : CovalencePlugin {
         private bool? CanBuild(Planner planner, Construction prefab, Construction.Target target) {
