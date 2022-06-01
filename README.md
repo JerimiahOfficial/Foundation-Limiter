@@ -1,6 +1,4 @@
 # Foundation-Limiter
-A Rust plugin to limit the amount of foundations that can be used.
-
 comes with 2 different versions:
 - BaseFoundationLimiter.cs
 - PlayerFoundationLimiter.cs
