@@ -9,9 +9,8 @@
 ⠀⠀⠀⠀⠀⠚⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠂
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⢻⣿⣿⡿⠛⠉⡇
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠘⠋⠁⠀⠀ ⣧
-
 Created by Jerimiah
-https://github.com/JerimiahOfficial/Foundation-Limiter
+https://github.com/JerimiahOfficial/
 */
 
 using System.Collections.Generic;
@@ -21,7 +20,7 @@ namespace Oxide.Plugins {
     [Info("BaseFoundationLimiter", "Jerimiah", "0.0.3")]
     [Description("A plugin to limit players to a set amount of foundations.")]
 
-    class FoundationLimiter : CovalencePlugin {
+    class BaseFoundationLimiter : CovalencePlugin {
         private bool? CanBuild(Planner planner, Construction prefab, Construction.Target target) {
             uint? buildingID = (target.entity as DecayEntity)?.buildingID;
 
